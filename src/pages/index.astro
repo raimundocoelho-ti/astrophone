@@ -3,19 +3,52 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import TailwindcssTest from "../components/TailwindcssTest.astro";
+
+// Importando todos os novos componentes de seção
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Differentiators from '../components/Differentiators.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<TailwindcssTest/>
-		</main>
-		<Footer />
-	</body>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	<style>
+		:root {
+			--astro-accent: #253488;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Inter', sans-serif;
+			font-weight: 900;
+		}
+		body {
+			font-family: 'Inter', sans-serif;
+			background-color: #0D1127;
+			color: white;
+		}
+		.hover-glow:hover {
+			box-shadow: 0 0 25px rgba(45, 212, 191, 0.3);
+			transform: translateY(-5px);
+			transition: all 0.3s ease;
+		}
+	</style>
+</head>
+<body>
+<Header />
+<main>
+	<Hero />
+	<Services />
+	<HowItWorks />
+	<Differentiators />
+	<Testimonials />
+	<Faq />
+	<Contact />
+</main>
+<Footer />
+</body>
 </html>
